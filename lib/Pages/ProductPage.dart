@@ -91,8 +91,40 @@ class ProductPageState extends State<ProductPage> {
             height: 2,
             color: Colors.grey,
           ),
+        SizedBox(height: 10,),
+        SizedBox(width: 50,),
+          Center(
+            child: Container(
+              height: 60,
+              width: 200,
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(255, 124, 124, 124),
+                borderRadius: BorderRadius.circular(35),
+                
+
+              ),
+              
+            ),
+          ),
+           SizedBox(height: 10,),
+        SizedBox(width: 50,),
+          Center(
+            child: Container(
+              height: 60,
+              width: 200,
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(255, 124, 124, 124),
+                borderRadius: BorderRadius.circular(35),
+                
+
+              ),
+              
+            ),
+          )
         ],
+        
       ),
+      
       
     );
   }
