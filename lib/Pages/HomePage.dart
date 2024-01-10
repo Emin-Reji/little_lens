@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tiny_lens/Pages/CartPage.dart';
 import 'package:tiny_lens/Pages/ProductPage.dart'; // Import ProductPage
-import 'package:tiny_lens/Pages/ProductPage.dart';
+
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
 
