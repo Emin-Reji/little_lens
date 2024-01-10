@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:tiny_lens/Pages/CartPage.dart';
+import 'package:tiny_lens/Pages/ProductPage.dart'; // Import ProductPage
+import 'package:tiny_lens/Pages/ProductPage.dart';
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
 
@@ -252,33 +254,42 @@ class HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: List.generate(
                     4,
-                    (index) => Container(
-                      width: 90,
-                      height: 110,
-                      margin: EdgeInsets.all(2),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            _getContainerImage(index),
-                            width: 90,
-                            height: 50,
-                            fit: BoxFit.cover,
-                          ),
-                          SizedBox(height: 5),
-                          Text(
-                            containerLabels[index],
-                            style: GoogleFonts.montserrat(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.black,
+                    (index) => GestureDetector(
+                      onTap: () {
+                        // Navigate to ProductPage when the container is tapped
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => ProductPage()),
+                        );
+                      },
+                      child: Container(
+                        width: 90,
+                        height: 110,
+                        margin: EdgeInsets.all(2),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset(
+                              _getContainerImage(index),
+                              width: 90,
+                              height: 50,
+                              fit: BoxFit.cover,
                             ),
-                          ),
-                        ],
+                            SizedBox(height: 5),
+                            Text(
+                              containerLabels[index],
+                              style: GoogleFonts.montserrat(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -348,7 +359,7 @@ class HomePageState extends State<HomePage> {
           color: Colors.white,
           elevation: 2,
           child: Container(
-            height: 10, 
+            height: 10,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
@@ -359,7 +370,7 @@ class HomePageState extends State<HomePage> {
                 IconButton(
                   icon: Icon(Icons.shopping_cart),
                   onPressed: () {
-                     Navigator.push(
+                    Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => CartPage()),
                     );
